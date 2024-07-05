@@ -42,10 +42,9 @@ Schema will be designed as the following:
 		- Player Id (FOREIGN KEY)
 		- Arc Id (FOREIGN KEY)
 		- Team Id (FOREIGN KEY)
-		- Position
-		- Rank
-		- Jersey number
+		- Position(s)
 		- Weapons
+		- Jersey no
 
 Only slight question raised will be the second selection since there is to many teams due to the mini games in 
 that arc. So there will be a lot of NULL values as no teams will be specified only PLAYER, ARC, STATS, would
@@ -77,8 +76,30 @@ the first complication comes in.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-TBC...
+7/5/2024
 
+SCRAPING PLAYER STATS:
+
+	We now have 3/4 csv files we need before moving on to database portion. However this table might be tricky due 
+	to the amount of data we have and how we have to be precise with foreign keys. Let's figure out how we will 
+	take care of fields we need for this.
+		- Stat id, the easiest one we will have a global counter each time we create a new entry
+
+		- Player id FOREIGN KEY. For this we have the csv file we can read. What I'm currently thinking is
+		  we will iterate through player page again in new script, we will check for the name, same way we did
+		  when we were getting general player data, we check where that player is located in the csv file, we get
+		  it's tuple. Then since we are on the tuple for the specific player name, we will get the value at it's
+		  column index since we created the datasets we can hardcode the index we want. No player can be None since
+		  all 137 players exist in my csv file. 
+
+		- For Arc id it'll take a couple tasks. we'd have to iterate through players Team and Former Team(s). None of the
+		players can be None since at one point characters existed in a arc. Again since we manaully wrote this data,
+		we will check for the value of arc name to check it with team names since they are spelled the same, then get
+		the key value for that arc_id in that same dictionary. 
+
+		- Actually my life might be easier to do arc id and team id in one since I manually wrote that data. team id and
+		arc id are already together properly. I will just iterate through former team and team, get the name of the team,
+		then associate my id's based off that in the tuple since I know where they will be located. 
 	
 
 
