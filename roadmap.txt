@@ -1,0 +1,90 @@
+7/4/2024
+---------------------------------------------------------------------------------------------------------------------------------------
+
+OVERVIEW:
+
+Getting setup with project. We will use React, Spring Boot, PostgreSQL, and Python to complete this project.
+The goal of Blue Lock Index is to show the teams and players of each arc. We will be doing the following arcs:
+	- First Selection
+	- Second Selection
+	- World 5
+	- Third Selection
+	- U20 Match
+	- Neo Egoist League
+
+To begin building this application we of course need... DATA! Unfortnuately I couldn't find an API to make this
+process easy so we will result to web scraping utilizing Python. The following is the link to where I will be 
+getting my data. 
+
+LINK: https://bluelock.fandom.com/wiki/List_of_Characters
+
+Schema will be designed as the following:
+	
+	PLAYER:
+		- Player Id (PRIM KEY)
+		- Full name
+		- Age
+		- Height
+		- Nationality
+		- Image url
+
+	ARC:
+ 		- Arc Id (PRIM KEY)
+		- Arc name
+	
+	TEAM:
+		- Team Id (PRIM KEY)
+		- Arc Id (FOREIGN KEY)
+		- Team name
+
+	PLAYER STATS:
+		- Stat Id (PRIM KEY)
+		- Player Id (FOREIGN KEY)
+		- Arc Id (FOREIGN KEY)
+		- Team Id (FOREIGN KEY)
+		- Position
+		- Rank
+		- Jersey number
+		- Weapons
+
+Only slight question raised will be the second selection since there is to many teams due to the mini games in 
+that arc. So there will be a lot of NULL values as no teams will be specified only PLAYER, ARC, STATS, would
+be specified.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+WEB DATA SCRAPING:
+
+We will be utilizing the BeautifulSoup library from python to be scraping data via the html/xml of the page. This is where
+the first complication comes in. 
+
+	Our data has profiles for each of the character for each arc. So before collecting actual
+	player data, we must scrape all references that point to the page of their actual profile. 
+	We will make a function that collects all hrefs for each player component.
+
+	Once we have all the hrefs for each player, we will iterate through each and parse out data needed.
+	Once data is parsed and stored in proper data structure we will convert it into csv file as we will
+	need these files to transfer data to a dbms seamlessly is that even a word bruh.
+
+	Arc and Team data will be manually written as there is not that many entries. These will also be converted
+	to csv files. Recall we use pandas library to do this action. 
+
+	Lastly we need the player arc data. I will import my manually written data to assist with this ensuring I pair
+	the foreign key data correctly. For player data I'll read my csv file. This will be a little tricky as a lot
+	of players have played on multiple teams and been in more than one arcs. Additionally I need to figure out the
+	player weapon aspect. For example Isagi didn't get metavision until he was on Bastard Munchen. I feel like
+	that can be manually adjusted, but we shall see. 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+TBC...
+
+	
+
+
+
+
+
+
+
+
