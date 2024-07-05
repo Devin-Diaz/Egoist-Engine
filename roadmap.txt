@@ -100,8 +100,14 @@ SCRAPING PLAYER STATS:
 		- Actually my life might be easier to do arc id and team id in one since I manually wrote that data. team id and
 		arc id are already together properly. I will just iterate through former team and team, get the name of the team,
 		then associate my id's based off that in the tuple since I know where they will be located. 
-	
 
+		- Damn I forgot to update this but we have completed the script to get majority of the player stats data.
+		The only con was I could'nt figure out a way to parse weapons and positions since my data im scraping from 
+		is not the best. It is indeed not beautiful soup. So sadly I will have to adjust some things manually but the
+		important thing is my foreign keys line up and it should be ready to be sent to PostgreSQL after my 
+		manual changes. 
+	
+---------------------------------------------------------------------------------------------------------------------------------------
 
 
 

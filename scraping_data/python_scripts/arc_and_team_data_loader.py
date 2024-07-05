@@ -34,9 +34,3 @@ TEAM_DATA = [
     {'team_id': 17, 'arc_id': 6, 'team_name': 'Ubers'},
     {'team_id': 18, 'arc_id': 6, 'team_name': 'Paris X Gen'}
 ]
-
-arc_df = pd.DataFrame(ARC_DATA)
-arc_df.to_csv('arcs.csv', index=False)
-
-teams_df = pd.DataFrame(TEAM_DATA)
-teams_df.to_csv('teams.csv', index=False)

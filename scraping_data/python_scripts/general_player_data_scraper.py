@@ -2,6 +2,8 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
+#---------------------------------------------------------------------------------------------------------------------------
+# USED FOR TESTING PURPOSES
 # IGNORE ONLY FOR TESTING PURPOSES
 MOCK_DATA_FOR_TESTING = [
     'https://bluelock.fandom.com/wiki/Picasso',
@@ -19,6 +21,7 @@ def display_set(hashset):
 def display_list(content):
     for player in content:
         print(player)
+#---------------------------------------------------------------------------------------------------------------------------
 
 
 # Blue lock wiki where I got all my data from. Don't sue me pls I just want internship.
