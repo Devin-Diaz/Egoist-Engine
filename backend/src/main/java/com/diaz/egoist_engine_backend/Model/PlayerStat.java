@@ -3,6 +3,8 @@ package com.diaz.egoist_engine_backend.Model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,6 +29,9 @@ public class PlayerStat {
     @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
+
+    @Column(name = "weapon", columnDefinition = "TEXT")
+    private String weapon;
 
     @Column(name = "jersey_no")
     private String jerseyNumber;
