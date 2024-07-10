@@ -1,6 +1,6 @@
 import React from "react";
 import blueLockLogo from "../Images/blue_lock_logo.avif"
-import '../Styles/headerStyle.css';
+import '../Styles/headerStyle.css'
 
 function Header() {
     return (

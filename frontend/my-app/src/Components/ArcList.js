@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Link} from 'react-router-dom';
 import api from "../Services/api";
+import Header from '../Components/Header'
 
 function ArcList() {
     const [arcs, setArcs] = useState([]);
@@ -19,11 +20,12 @@ function ArcList() {
     
     return (
         <div>
+            <Header />
             <h1>Arcs</h1>
             <ul>
                 {arcs.map(arc => (
                     <li key={arc.arcId}>
-                        <Link to={`/arc/${arc.arcId}`}>{arc.arcName}</Link>
+                        <Link to={`/arc/${arc.arcName}`}>{arc.arcName}</Link>
                     </li>
                 ))}
             </ul>

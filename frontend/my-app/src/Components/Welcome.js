@@ -1,9 +1,14 @@
 import React from "react";
-import Header from "./Header";
+import Header from '../Components/Header'
+import WelcomeBody from "./WelcomeBody";
 
 function Welcome() {
     return (
-        <Header />
+        <div>
+            <Header />
+            <WelcomeBody />
+        </div>
+
     )
 }
 

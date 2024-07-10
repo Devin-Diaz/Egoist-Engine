@@ -1,0 +1,83 @@
+.overview--container {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: whitesmoke;
+    padding: 20px; /* Add padding for more breathing room */
+    background: rgba(0, 0, 0, 0.6); /* Slightly transparent background for text readability */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.welcome--text {
+    font-size: 2rem; /* Slightly larger font size for emphasis */
+    font-weight: 900;
+    margin-bottom: 20px; /* Add margin below for spacing */
+    color: #FFD700; /* Gold color for welcome text */
+}
+
+.spoilers--text {
+    color: #FF4500; /* Use a slightly softer red for the disclaimer */
+    font-size: 1.2rem; /* Increase font size for better readability */
+    margin-bottom: 20px; /* Add margin below for spacing */
+}
+
+.spoiler--span {
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.description--text {
+    padding: 0 20px; /* Adjust padding for better responsiveness */
+    font-size: 1.1rem; /* Slightly larger font size */
+    line-height: 1.5; /* Improve readability */
+    max-width: 800px; /* Limit the width of the text for better readability */
+    color: #FFFFFF; /* Ensure good contrast with the background */
+}
+
+/* General styling for buttons container */
+.buttons--container {
+    margin-top: 50px; /* Adjusted margin for better spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Evenly space the buttons */
+}
+
+/* Styling for buttons */
+.buttons--container button {
+    background-color: #00008b; /* Dark blue background */
+    color: #FFFFFF; /* White text */
+    border: 2px solid #FFD700; /* Gold border to match the theme */
+    padding: 10px 20px; /* Padding for better size and spacing */
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+    font-weight: 700; /* Bold text */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
+}
+
+.buttons--container button:hover {
+    background-color: #FFD700; /* Gold background on hover */
+    color: #00008b; /* Dark blue text on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+.buttons--container button:active {
+    transform: scale(0.9); /* Slightly shrink the button on click */
+}
+
+a {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Inherit the color from the parent element */
+    cursor: pointer; /* Ensure the cursor changes to a pointer */
+}
+
+/* Optionally, you can add styles for hover and focus states if needed */
+a:hover,
+a:focus {
+    text-decoration: none; /* Ensure no underline on hover or focus */
+    color: inherit; /* Maintain the inherited color on hover or focus */
+}

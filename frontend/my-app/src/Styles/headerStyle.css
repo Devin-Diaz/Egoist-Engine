@@ -5,14 +5,17 @@
     background: linear-gradient(90deg, #add8e6 0%, #00008b 100%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adding shadow effect */
     padding: 25px;
-    height: 65px;
-    width: 100%;
+    height: 120px;
+    width: 100vw; /* Use viewport width */
+    box-sizing: border-box; /* Include padding in the element's width */
+    overflow: hidden; /* Prevent any potential overflow */
 }
 
 .header--title {
     color: whitesmoke;
+    font-weight: 600;
     font-size: 2.5rem;
-    margin: 0 65px; /* Adjust margins to bring titles closer to the logo */
+    margin: 0 15px; /* Adjust margins to bring titles closer to the logo */
 }
 
 .header--logo {
