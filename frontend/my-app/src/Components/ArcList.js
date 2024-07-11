@@ -1,7 +1,17 @@
 import React, {useState, useEffect} from "react";
-import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import api from "../Services/api";
 import Header from '../Components/Header'
+import Arc from "./Arc";
+import Button from "./Button";
+import '../Styles/buttonStyle.css'
+import firstSelec from '../Images/first_selection_img.webp'
+import secondSelec from '../Images/second_selection_img.webp'
+import thirdSelec from '../Images/third_selection_img.webp'
+import worldFive from '../Images/world_five_img.webp'
+import u20 from '../Images/u20_match_img.jpg'
+import neoEgoist from '../Images/neo_egoist_img.png'
+
 
 function ArcList() {
     const [arcs, setArcs] = useState([]);
@@ -17,20 +27,38 @@ function ArcList() {
         }
         fetchArcs();
     }, []);
+
+    const arcImages = {
+        1: firstSelec,
+        2: secondSelec,
+        3: worldFive,
+        4: thirdSelec,
+        5: u20,
+        6: neoEgoist
+    };
+
+    const navigate = useNavigate();
+
+    function handleWelcomePageClick() {
+        navigate('/')
+    }
     
     return (
         <div>
             <Header />
-            <h1>Arcs</h1>
-            <ul>
-                {arcs.map(arc => (
-                    <li key={arc.arcId}>
-                        <Link to={`/arc/${arc.arcName}`}>{arc.arcName}</Link>
-                    </li>
-                ))}
-            </ul>
+            <div className="arc--grid--container">
+                <div className="arc--grid">
+                    {arcs.map(arc => (
+                        <Arc key={arc.arcId} arc={arc} imageUrl={arcImages[arc.arcId]}/>
+                    ))}
+                </div>
+            </div>
+            <div className="button--container">
+                <Button eventListener={handleWelcomePageClick} buttonName="Welcome Page"/>
+            </div>
         </div>
     );
 };
 
 export default ArcList;
+

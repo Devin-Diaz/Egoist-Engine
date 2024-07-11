@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from './Button'
+import '../Styles/buttonStyle.css'
 import '../Styles/welcomeBodyStyle.css';
+
 
 function WelcomeBody() {
 
@@ -39,8 +42,8 @@ function WelcomeBody() {
                 </h4>
             </div>
             <div className="buttons--container">
-                <button onClick={handleLockOffClick}>LOCK OFF</button>
-                <button onClick={handleBrowseArcsClick}>Browse Arcs</button>
+                <Button eventListener={handleLockOffClick} buttonName="LOCK OFF"/>
+                <Button eventListener={handleBrowseArcsClick} buttonName="Browse Arcs"/>
             </div>
         </main>
     );
