@@ -18,7 +18,7 @@ function LockOffPage() {
     }
 
     function handleArcsClick() {
-        navigate('/browse-arcs')
+        navigate('/arcs')
     }
 
     return (
