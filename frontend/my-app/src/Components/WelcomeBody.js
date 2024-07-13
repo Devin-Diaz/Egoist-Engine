@@ -44,6 +44,8 @@ function WelcomeBody() {
             </div>
         </main>
     );
+    
+    
 }
 
 export default WelcomeBody;

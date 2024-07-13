@@ -4,7 +4,8 @@ import './App.css';
 import ArcList from './Components/ArcList';
 import Welcome from './Components/Welcome';
 import LockOffPage from './Components/LockOffPage';
-import TeamList from './Components/TeamList'
+import TeamList from './Components/TeamList';
+import PlayerStatsList from './Components/PlayerStatsList';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/rayuga-shadow" element={<LockOffPage />} />
         <Route path="/arcs" element={<ArcList />} />
         <Route path="/arcs/:arcId" element={<TeamList />} />
+        <Route path='/teams/:teamId' element={<PlayerStatsList />} />
     </Routes>
 </Router>
   );

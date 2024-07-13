@@ -23,10 +23,6 @@ import barcha from '../Images/barcha.webp'
 import manshine from '../Images/manshine.webp'
 import ubers from '../Images/ubers.webp'
 
-
-
-
-
 function TeamList() {
     const [teams, setTeams] = useState([]);
     const { arcId } = useParams();
