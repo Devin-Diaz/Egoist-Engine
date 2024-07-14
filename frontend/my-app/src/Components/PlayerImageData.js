@@ -135,6 +135,7 @@ import YujinKoshinaka from '../PlayerImages/Yujin_Koshinaka.webp';
 import ReijiHiiragi from '../PlayerImages/Reiji_Hiiragi.webp';
 import ChrisPrince from '../PlayerImages/Chris_Prince.webp';
 import KentoCho from '../PlayerImages/Kento_Cho.webp';
+import blGirl from '../PlayerImages/bl_girl.jpeg';
 
 const PlayerImageData = {
     1: Bos,
@@ -274,6 +275,7 @@ const PlayerImageData = {
     135: ReijiHiiragi,
     136: ChrisPrince,
     137: KentoCho,
+    138: blGirl
 };
 
 export default PlayerImageData;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../Services/api";
 import Header from './Header';
 import DataBox from './DataBox';
@@ -9,6 +10,7 @@ import worldFive from '../Images/world_five.jpg';
 import u20 from '../Images/u20_match_img.jpg';
 import neoEgoist from '../Images/neo_egoist_img.png';
 import '../Styles/dataBoxStyle.css';
+import arrow from '../Images/arrow.png';
 
 function ArcList() {
     const [arcs, setArcs] = useState([]);
@@ -34,11 +36,17 @@ function ArcList() {
         6: neoEgoist
     };
 
+    const navigate = useNavigate();
+    function handleClick() {
+        navigate('/')
+    }
+
     return (
         <div>
             <Header />
             <div className="title--container">
-                    <h2 className="title--text">Arcs</h2>
+                <img src={arrow} alt="go to welcome page" onClick={handleClick}/>
+                <h2 className="title--text">Arcs</h2>
             </div>
             <div className="databox--grid--container">
                 <div className="databox--grid">

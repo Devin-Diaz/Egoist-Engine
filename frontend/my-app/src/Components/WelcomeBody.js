@@ -28,6 +28,11 @@ function WelcomeBody() {
                     <a href="https://bluelock.fandom.com/wiki/Blue_Lock_Wiki"> 
                         <u>All data is from the Fandom Blue Lock Wiki</u>
                     </a>
+                    <br /><br />
+
+                    <a href="https://github.com/Devin-Diaz">
+                       <u>My Github</u> 
+                    </a>
                 </h3>
                 <h4 className="description--text">
                     As a passionate fan of Blue Lock, one of the most popular manga and anime series today, 

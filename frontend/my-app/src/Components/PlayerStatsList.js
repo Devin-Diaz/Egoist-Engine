@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import api from "../Services/api";
 import Header from "./Header";
 import Player from "./Player";
 import '../Styles/playerStyle.css';
-import PlayerImageData from './PlayerImageData'
+import PlayerImageData from './PlayerImageData';
+import arrow from '../Images/arrow.png';
 
 function PlayerStatsList() {
     const [playerStats, setPlayerStats] = useState([]);
@@ -28,11 +29,19 @@ function PlayerStatsList() {
         fetchPlayerStatsAndTeam();
     }, [teamId]);
 
+    const navigate = useNavigate();
+    function handleClick() {
+        if (team && team.arc) {
+            navigate(`/arcs/${team.arc.arcId}`);
+        }
+    }
+
     return (
         <div>
             <Header />
             {team && (
                 <div className="title--container">
+                    <img src={arrow} alt="go back to teams" onClick={handleClick}/>
                     <h2 className="title--text">{team.teamName}</h2>
                 </div>
             )}

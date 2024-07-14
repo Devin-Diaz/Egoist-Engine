@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import api from "../Services/api";
 import Header from "./Header";
@@ -22,7 +23,9 @@ import pxg from '../Images/pxg.webp';
 import barcha from '../Images/barcha.webp';
 import manshine from '../Images/manshine.webp';
 import ubers from '../Images/ubers.webp';
-import '../Styles/titleStyle.css'
+import '../Styles/titleStyle.css';
+import arrow from '../Images/arrow.png';
+
 
 function TeamList() {
     const [teams, setTeams] = useState([]);
@@ -65,11 +68,17 @@ function TeamList() {
         18: pxg
     };
 
+    const navigate = useNavigate();
+    function handleClick() {
+        navigate('/arcs')
+    }
+
     return (
         <div>
             <Header />
             {arc && (
                 <div className="title--container">
+                    <img src={arrow} alt="go back to teams" onClick={handleClick}/>
                     <h2 className="title--text">{arc.arcName}</h2>
                 </div>
             )}

@@ -35,7 +35,7 @@
 
 /* Typing effect for the welcome text */
 .welcome--text {
-    font-size: 6rem; /* Larger font size for emphasis */
+    font-size: 5rem; /* Larger font size for emphasis */
     font-weight: 900;
     color: #FFFFFF; /* White color for welcome text */
     text-align: left;

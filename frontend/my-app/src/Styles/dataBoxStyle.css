@@ -40,7 +40,7 @@ Link {
 }
 
 .databox--image {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-bottom: 2px solid #FFD700; /* Gold border to match the theme */
 }
