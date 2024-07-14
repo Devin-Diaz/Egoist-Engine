@@ -37,6 +37,9 @@ function ArcList() {
     return (
         <div>
             <Header />
+            <div className="title--container">
+                    <h2 className="title--text">Arcs</h2>
+            </div>
             <div className="databox--grid--container">
                 <div className="databox--grid">
                     {arcs.map(arc => (

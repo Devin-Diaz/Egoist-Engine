@@ -1,8 +1,8 @@
 
 
 .button {
-    background-color: #00008b; /* Dark blue background */
-    color: #FFFFFF; /* White text */
+    background-color: yellow; /* Dark blue background */
+    color: #00008b; /* White text */
     border: 2px solid #FFD700; /* Gold border to match the theme */
     padding: 10px 20px; /* Padding for better size and spacing */
     font-size: 1.2rem; /* Slightly larger font size for readability */

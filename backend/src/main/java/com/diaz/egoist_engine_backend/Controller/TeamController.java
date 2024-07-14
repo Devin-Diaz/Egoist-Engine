@@ -5,10 +5,7 @@ import com.diaz.egoist_engine_backend.Model.Team;
 import com.diaz.egoist_engine_backend.Service.TeamService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,4 +30,9 @@ public class TeamController {
         return ResponseEntity.ok(teams);
     }
 
+    @GetMapping("/{teamId}")
+    public ResponseEntity<Team> getTeamById(@PathVariable Integer teamId) {
+        Optional<Team> teamOptional = teamService.getTeamById(teamId);
+        return teamOptional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
+    }
 }

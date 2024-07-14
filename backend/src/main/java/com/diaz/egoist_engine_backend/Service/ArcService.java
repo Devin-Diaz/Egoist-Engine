@@ -18,4 +18,8 @@ public class ArcService {
     public List<Arc> getAllArcs() {
         return arcRepository.findAll();
     }
+
+    public Optional<Arc> getArcById(Integer arcId) {
+        return arcRepository.findById(arcId);
+    }
 }
