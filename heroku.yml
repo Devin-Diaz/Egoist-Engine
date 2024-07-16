@@ -1,0 +1,19 @@
+build:
+  # Specify buildpacks
+  buildpacks:
+    - heroku/nodejs
+    - heroku/java
+
+  # Define build steps
+  steps:
+    - name: Build React frontend
+      run: |
+        cd frontend
+        npm install
+        npm run build
+        cp -a build/. ../backend/src/main/resources/static/
+
+    - name: Build Spring Boot backend
+      run: |
+        cd backend
+        mvn clean install
